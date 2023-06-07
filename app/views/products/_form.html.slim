@@ -1,0 +1,29 @@
+
+= form_with(model: product, class: "contents") do |form|
+  - if product.errors.any?
+    div#error_explanation.bg-red-50.text-red-500.px-3.py-2.font-medium.rounded-lg.mt-3
+      h2
+        | #{pluralize(product.errors.count, "error")} prohibited this product from being saved:
+      ul
+        - product.errors.each do |error|
+          li
+            = error.full_message
+
+  div.my-5
+    = form.label :title
+    = form.text_field :title, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full"
+
+  div.my-5
+    = form.label :description
+    = form.text_area :description, rows: 10, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full"
+
+  div.my-5
+    = form.label :image_url
+    = form.text_field :image_url, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full"
+
+  div.my-5
+    = form.label :price
+    = form.text_field :price, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full"
+
+  div.inline
+    = form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer"
