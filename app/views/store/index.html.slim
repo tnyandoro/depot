@@ -6,13 +6,15 @@
     | Your Pragmatic Catalog
 
   ul
-    - @products.each do |product|
-      li.flex.mb-6
-        = image_tag product.image_url, class: 'object-contain w-40 h-48 shadow mr-6'
-        div
-          h2.font-bold.text-lg.mb-3= product.title
+    - cache @product do
+      - @products.each do |product|
+        - cache product do
+          li.flex.mb-6
+            = image_tag product.image_url, class: 'object-contain w-40 h-48 shadow mr-6'
+            div
+              h2.font-bold.text-lg.mb-3= product.title
 
-          p= sanitize(product.description)
+              p= sanitize(product.description)
 
-          div.mt-3
-            = number_to_currency(product.price)
+              div.mt-3
+                = number_to_currency(product.price)
