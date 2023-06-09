@@ -26,6 +26,7 @@ html
             a href="/news" News
           li
             a href="/contact" Contact
-
+          li
+           p The current date is #{Time.now.strftime('%Y-%m-%d')}
       main.container.mx-auto.mt-4.px-5.flex
         = yield
