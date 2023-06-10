@@ -1,4 +1,10 @@
 .w-full
+  - if session[:counter].nil?
+    p You have not visited the catalog page yet.
+  - else
+    - if session[:counter] > 5
+      p You have visited the catalog page #{pluralize(session[:counter], 'time')}.
+
   - if notice.present?
     p.py-2.px-3.bg-green-50.mb-5.text-green-500.font-medium.rounded-lg.inline-block#notice= notice
 
@@ -15,7 +21,7 @@
               h2.font-bold.text-lg.mb-3= product.title
 
               p
-               = sanitize(product.description)
+                = sanitize(product.description)
 
               div.mt-3
                 = number_to_currency(product.price)

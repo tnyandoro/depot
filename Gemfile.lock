@@ -69,6 +69,8 @@ GEM
     addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
     bindex (0.8.1)
+    binding_of_caller (1.0.0)
+      debug_inspector (>= 0.0.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
@@ -87,6 +89,7 @@ GEM
     debug (1.8.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
+    debug_inspector (1.1.0)
     erubi (1.12.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
@@ -218,6 +221,7 @@ PLATFORMS
   x86_64-darwin-21
 
 DEPENDENCIES
+  binding_of_caller
   bootsnap
   capybara
   debug
