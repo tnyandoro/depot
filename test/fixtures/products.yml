@@ -13,7 +13,7 @@ two:
   price: 9.99
 
 ruby:
-  title: Programming Ruby Ruby 1.9
-  description: Love testing in ruby, much eaiser than that other language
+  title: Programming Ruby 1.9
+  description: Love testing in ruby, much easiser than that other language
   image_url: ruby.jpg
   price: 49.99
