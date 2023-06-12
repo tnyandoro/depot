@@ -17,6 +17,10 @@ html
 
     section.flex
       nav.bg-green-900.p-6
+        div#cart.bg-white.rounded.p-2
+         - if @cart
+          == render @cart
+
         ul.text-gray-300.leading-8
           li
             a href="/" Home
