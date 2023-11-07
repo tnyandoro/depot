@@ -18,8 +18,8 @@ html
     section.flex
       nav.bg-green-900.p-6
         div#cart.bg-white.rounded.p-2
-         - if @cart
-          == render @cart
+          - if @cart
+            == render @cart
 
         ul.text-gray-300.leading-8
           li
@@ -31,6 +31,6 @@ html
           li
             a href="/contact" Contact
           li
-           p The current date is #{Time.now.strftime('%Y-%m-%d')}
+            p Current date is #{Time.now.strftime('%d/%m/%Y')}
       main.container.mx-auto.mt-4.px-5.flex
         = yield

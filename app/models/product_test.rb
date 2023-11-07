@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 # Tests for the Product model
 class ProductTest < ActiveSupport::TestCase
@@ -32,10 +34,10 @@ class ProductTest < ActiveSupport::TestCase
 
   def new_product(image_url)
     Product.new(
-      title:       'My Book Title',
+      title: 'My Book Title',
       description: 'yyy',
-      price:       1,
-      image_url:   image_url
+      price: 1,
+      image_url:
     )
   end
 
@@ -74,15 +76,15 @@ class ProductTest < ActiveSupport::TestCase
     assert_equal ['has already been taken'], product.errors[:title]
   end
   test "can't delete a product in cart" do
-    assert_difference("Product.count", 0) do
+    assert_difference('Product.count', 0) do
       delete product_url(products(:two))
     end
 
     assert_redirected_to products_url
   end
 
-  test "should destroy product" do
-    assert_difference("Product.count", -1) do
+  test 'should destroy product' do
+    assert_difference('Product.count', -1) do
       delete product_url(@product)
     end
     assert_redirected_to products_url

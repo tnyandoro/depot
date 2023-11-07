@@ -1,16 +1,18 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class LineItemsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @line_item = line_items(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get line_items_url
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     get new_line_item_url
     assert_response :success
   end
@@ -30,19 +32,19 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get edit_line_item_url(@line_item)
     assert_response :success
   end
 
-  test "should update line_item" do
+  test 'should update line_item' do
     patch line_item_url(@line_item),
-      params: { line_item: { product_id: @line_item.product_id } }
+          params: { line_item: { product_id: @line_item.product_id } }
     assert_redirected_to line_item_url(@line_item)
   end
 
-  test "should destroy line_item" do
-    assert_difference("LineItem.count", -1) do
+  test 'should destroy line_item' do
+    assert_difference('LineItem.count', -1) do
       delete line_item_url(@line_item)
     end
 
