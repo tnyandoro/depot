@@ -1,0 +1,13 @@
+ div id="#{dom_id(line_item)}"
+  p.my-5
+    strong.block.font-medium.mb-1 Product:
+    = line_item.product_id
+
+  p.my-5
+    strong.block.font-medium.mb-1 Cart:
+    = line_item.cart_id
+
+  - if action_name != "show"
+    = link_to "Show this line item", line_item, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium"
+    = link_to 'Edit this line item', edit_line_item_path(line_item), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium"
+    hr.mt-6

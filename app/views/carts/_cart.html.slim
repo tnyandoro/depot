@@ -1,0 +1,12 @@
+div#cart
+  h2.font-bold.text-lg.mb-3 Your Cart
+
+  table.table-auto
+    == render cart.line_items
+    tfoot
+      tr
+        th.text-right.pr-2.pt-2 colspan="3" Total:
+        td.text-right.pt-2.font-bold.border-t-2.border-black
+          == number_to_currency(cart.total_price)
+
+  = button_to 'Empty Cart', cart, method: :delete, class: 'ml-4 rounded-lg py-1 px-2 text-white bg-green-600'

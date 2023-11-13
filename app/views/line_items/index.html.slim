@@ -1,0 +1,23 @@
+.w-full
+  - if notice.present?
+    p.py-2.px-3.bg-green-50.mb-5.text-green-500.font-medium.rounded-lg.inline-block#notice= notice
+
+  .flex.justify-between.items-center
+    h1.font-bold.text-4xl Line items
+    = link_to 'New line item', new_line_item_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium"
+
+  #line_items.min-w-full
+    table.w-full
+      thead
+        tr
+          th Product
+          th Quantity
+          th Price
+          th Actions
+      tbody
+        - @line_items.each do |line_item|
+          tr
+            td = line_item.product.name
+            td = line_item.quantity
+            td = line_item.price
+            td = button_to 'Remove', line_item, method: :delete, data: { confirm: 'Are you sure?' }

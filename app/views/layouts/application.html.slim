@@ -11,5 +11,26 @@ html
     = javascript_importmap_tags
 
   body
-    main.container.mx-auto.mt-28.px-5.flex
-      == yield
+    header.bg-green-700
+      = image_tag 'logo.svg', alt: 'The Pragmatic Bookshelf'
+      h1= @page_title
+
+    section.flex
+      nav.bg-green-900.p-6
+        div#cart.bg-white.rounded.p-2
+          - if @cart
+            == render @cart
+
+        ul.text-gray-300.leading-8
+          li
+            a href="/" Home
+          li
+            a href="/questions" Questions
+          li
+            a href="/news" News
+          li
+            a href="/contact" Contact
+          li
+            p Current date is #{Time.now.strftime('%d/%m/%Y')}
+      main.container.mx-auto.mt-4.px-5.flex
+        = yield
